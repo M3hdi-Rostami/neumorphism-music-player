@@ -1,0 +1,230 @@
+@import url(http://fonts.googleapis.com/earlyaccess/khyay.css);
+
+body {
+  font-family: "Khyay", sans-serif;
+  background-color: #e0e0e0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.w-100 {
+  width: 100%;
+}
+
+.darkRed {
+  color: rgba(139, 0, 0, 0.8)!important;
+}
+.darkGreen {
+  color: rgba(0, 100, 0, 0.8)!important;
+}
+
+.wrapper {
+  width: 320px;
+  height: 580px;
+  box-shadow: 20px 20px 40px #bebebe, -20px -20px 40px #ffffff;
+  border-radius: 30px;
+}
+.main {
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #333333;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+}
+.btn:hover {
+  cursor: pointer;
+}
+.focus_btn {
+  cursor: pointer;
+  box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+  font-size: 15px;
+}
+
+.wrapper .main header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.wrapper .main header span {
+  color: #999999;
+  font-size: 14px;
+}
+
+
+.wrapper .main .imageBox {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper .main .imageBox img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.93);
+}
+.wrapper .main .imageBox.playing img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation-duration: 0.5s;
+  animation-name: ecolyzer;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes ecolyzer {
+  from {
+    transform: scale(0.88);
+  }
+  to {
+    transform: scale(0.93);
+  }
+}
+
+.wrapper .main .captionBox {
+  width: 100%;
+  text-align: center;
+}
+.wrapper .main .captionBox h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+.wrapper .main .captionBox p {
+  color: #999999;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.wrapper .main .truckBox {
+  margin-top: 10px;
+  width: 100%;
+}
+.wrapper .main .truckBox .timeBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  color: #999999;
+  font-size: 12px;
+}
+.wrapper .main .truckBox .truck::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 10px;
+  border-radius: 20px;
+  background-color: rgba(139, 0, 0, 0.8);
+}
+
+.wrapper .main .controlBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 40px;
+}
+
+#progressBar {
+  width: 100%;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: #e0e0e0;
+  height: 10px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  height: 10px;
+  border-radius: 20px;
+  width: 10px;
+  -webkit-appearance: none;
+  background-color: darkred;
+}
+
+/* 
+
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #3071A9;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000;
+  background: #3071A9;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 38px;
+  width: 15px;
+  border-radius: 5px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #3071A9;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background: #3071A9;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 38px;
+  width: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071A9;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #3071A9;
+} */
