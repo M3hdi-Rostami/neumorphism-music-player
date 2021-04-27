@@ -4,7 +4,7 @@
 3. run command `yarn start` and open app in [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Screenshot
-![picture](screenshot.png)
+![picture](/screenshot.png)
 
 
 ## Enjoy it
