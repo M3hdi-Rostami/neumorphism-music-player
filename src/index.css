@@ -13,12 +13,24 @@ body {
 .w-100 {
   width: 100%;
 }
+.d_none {
+  display: none !important;
+}
+.flex_center_column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.mr_3 {
+  margin-right: 15px;
+}
 
 .darkRed {
-  color: rgba(139, 0, 0, 0.8)!important;
+  color: rgba(139, 0, 0, 0.8) !important;
 }
 .darkGreen {
-  color: rgba(0, 100, 0, 0.8)!important;
+  color: rgba(0, 100, 0, 0.8) !important;
 }
 
 .wrapper {
@@ -26,9 +38,10 @@ body {
   height: 580px;
   box-shadow: 20px 20px 40px #bebebe, -20px -20px 40px #ffffff;
   border-radius: 30px;
+  box-sizing: border-box;
+  padding: 20px;
 }
 .main {
-  padding: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,11 +63,11 @@ body {
 }
 .focus_btn {
   cursor: pointer;
-  box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+  box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff !important;
   font-size: 15px;
 }
 
-.wrapper .main header {
+.wrapper header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -62,11 +75,10 @@ body {
   margin-bottom: 20px;
 }
 
-.wrapper .main header span {
+.wrapper header span {
   color: #999999;
   font-size: 14px;
 }
-
 
 .wrapper .main .imageBox {
   width: 210px;
@@ -83,10 +95,16 @@ body {
   height: 100%;
   transform: scale(0.93);
 }
-.wrapper .main .imageBox.playing img {
+.wrapper .main .list_item.playing .imageBox img {
   border-radius: 50%;
   width: 100%;
   height: 100%;
+  animation-duration: 0.5s;
+  animation-name: ecolyzer;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.wrapper .main .list_item.playing .play_icon {
   animation-duration: 0.5s;
   animation-name: ecolyzer;
   animation-iteration-count: infinite;
@@ -111,7 +129,7 @@ body {
 }
 .wrapper .main .captionBox p {
   color: #999999;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 100;
 }
 
@@ -141,6 +159,12 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  margin-top: 40px;
+}
+.wrapper .main .copyright {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 100;
   margin-top: 40px;
 }
 
@@ -228,3 +252,75 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
   background: #3071A9;
 } */
+
+.wrapper .main .list_box {
+  margin: 0;
+  padding: 15px 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 395px;
+  overflow-y: auto;
+}
+.wrapper .main .list_box::-webkit-scrollbar {
+  width: 3px;
+}
+.wrapper .main .list_box .list_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  list-style: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.wrapper .main .list_box .list_item.playing {
+  box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+  cursor: not-allowed;
+}
+.wrapper .main .list_box .list_item .image_box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.wrapper .main .list_box .list_item .image_box img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transform: scale(0.93);
+}
+
+.wrapper .main .list_box .list_item.playing .image_box {
+  box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+}
+.wrapper .main .list_box .list_item.playing .image_box img {
+  animation-duration: 0.5s;
+  animation-name: ecolyzer;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.wrapper .main .list_box .list_item .caption_box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.wrapper .main .list_box .list_item .caption_box .singer {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 100;
+}
